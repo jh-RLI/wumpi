@@ -8,11 +8,11 @@ env:
 on:
   pull_request:
     branches: ['master', 'main']
-    paths-ignore: ['docs/**']
+    paths-ignore: ['htmxjd/docs/**']
 
   push:
     branches: ['master', 'main']
-    paths-ignore: ['docs/**']
+    paths-ignore: ['htmxjd/docs/**']
 
 concurrency:
   group: ${{ github.head_ref || github.run_id }}
@@ -59,13 +59,13 @@ jobs:
           python-version: '3.11'
           cache: pip
           cache-dependency-path: |
-            requirements/base.txt
-            requirements/local.txt
+            htmxjd/requirements/base.txt
+            htmxjd/requirements/local.txt
 
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements/local.txt
+          pip install -r htmxjd/requirements/local.txt
 
       - name: Test with pytest
         run: pytest

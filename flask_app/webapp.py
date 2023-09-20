@@ -1,9 +1,10 @@
-from flask import Flask, url_for, render_template, redirect, jsonify
+from flask import Flask, jsonify, redirect, render_template, url_for
 
 try:
     from worker import celery
 except ModuleNotFoundError:
     from .worker import celery
+
 import celery.states as states
 
 app = Flask(__name__)

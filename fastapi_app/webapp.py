@@ -1,4 +1,5 @@
 import os
+
 from fastapi import FastAPI, Request, Response
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
@@ -9,6 +10,7 @@ try:
     from worker import celery
 except ModuleNotFoundError:
     from .worker import celery
+
 import celery.states as states
 
 app = FastAPI()

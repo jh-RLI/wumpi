@@ -66,4 +66,3 @@ The output will then be located in `docs/_build/html` and can be opened with you
 ## Code linting
 
 Use `black .` to lint the python files inside the repo
-

@@ -67,9 +67,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r htmxdj/requirements/local.txt
 
-      - name: Set DJANGO_SETTINGS_MODULE
+      - name: Step into directory that includes tests and django config
         run: |
-          echo "export DJANGO_SETTINGS_MODULE=htmxdj.config.settings" >> $GITHUB_ENV
+          cd htmxdj/
 
       - name: Test with pytest
         run: pytest
